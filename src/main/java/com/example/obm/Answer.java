@@ -1,4 +1,4 @@
-package com.mysite.sbb;
+package com.example.obm;
 
 import java.time.LocalDateTime;
 

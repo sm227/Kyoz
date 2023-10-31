@@ -1,4 +1,4 @@
-package com.mysite.sbb;
+package com.example.obm;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

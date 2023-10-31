@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class Hello {
+public class HelloController {
 
     @GetMapping("/hello")
     @ResponseBody
