@@ -1,4 +1,4 @@
-package com.example.obm;
+package com.example.obm.answer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
