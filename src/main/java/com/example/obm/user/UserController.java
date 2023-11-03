@@ -57,4 +57,9 @@ public class UserController {
     public String login() {
         return "login_form";
     }
+
+    @GetMapping("/login2")
+    public String login2() {
+        return "login_form2";
+    }
 }
