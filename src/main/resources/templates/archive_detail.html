@@ -1,0 +1,20 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment = "content" class="container my-3">
+    <!-- 질문 -->
+    <h2 class="border-bottom py-2" th:text="${archive.title}"></h2>
+    <div class="card my-3">
+        <div class="card-body">
+            <div class="card-text" style="white-space: pre-line;" th:text="${archive.description}"></div>
+            <a class="card-text" style="white-space: pre-line;" th:href="@{${archive.link}}" th:text="강의보기" target="_blank"></a>
+            <div class="d-flex justify-content-end">
+                <div class="badge bg-light text-dark p-2 text-start">
+                    <div th:text="${#temporals.format(archive.createDate, 'yyyy-MM-dd HH:mm')}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a th:href="@{/archive/list}" class="btn btn-primary">목록보기</a>
+
+</div>
+</html>

@@ -1,0 +1,30 @@
+<html layout:decorate = "~{layout}">
+<div layout:fragment="content" class="container my-3">
+    <h3>쿄즈영어 e-Leaning</h3>
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일시</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="archive, loop : ${paging}">
+            <td th:text="${loop.count}"></td>
+            <td>
+                <a th:href="@{|/archive/detail/${archive.id}|}" th:text="${archive.title}"></a>
+            </td>
+            <td th:text="${#temporals.format(archive.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <span>
+        <a  sec:authorize="hasRole('ADMIN')" th:href="@{/archive/create}" class="btn btn-primary">강의 등록</a>
+
+    </span>
+    <span>
+          <p sec:authorize="hasRole('ADMIN')">강의 등록 버튼은 관리자에게만 표시됩니다.</p>
+    </span>
+</div>
+</html>
