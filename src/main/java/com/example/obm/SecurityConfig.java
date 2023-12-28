@@ -24,8 +24,8 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
                         .requestMatchers(new AntPathRequestMatcher("/**")).permitAll())
-                .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
-                        .requestMatchers(new AntPathRequestMatcher("/qustion/detail")).hasRole("ADMIN"))
+//                .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
+//                        .requestMatchers(new AntPathRequestMatcher("/qustion/list")).hasRole("ADMIN"))
                 .csrf((csrf) -> csrf
                         .ignoringRequestMatchers(new AntPathRequestMatcher("/h2-console/**")))
                 .headers((headers) -> headers
@@ -33,7 +33,7 @@ public class SecurityConfig {
                                 XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)))
                 .formLogin((formLogin) -> formLogin
                         .loginPage("/user/login")
-                        .defaultSuccessUrl("/"))
+                        .defaultSuccessUrl("/question/list"))
                 .logout((logout) -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
                         .logoutSuccessUrl("/")

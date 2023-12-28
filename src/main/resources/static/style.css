@@ -1,5 +1,5 @@
 textarea {
-    width:100%;
+    width:80%;
 }
 
 input[type=submit] {
@@ -18,14 +18,14 @@ footer a:hover{
 
 .footer-bottom{
     background: #3d6277;
-    padding: 2em;
+    padding: 0.2em;
 }
 .footer-top{
     background: #2d4958;
 }
 .footer-middle{
     background: #3d6277;
-    padding-top: 2em;
+    padding-top: 0.2em;
     color: white;
 }
 /**Sub Navigation**/
