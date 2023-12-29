@@ -32,7 +32,7 @@ public class UserController {
 
         if (!userCreateForm.getPassword1().equals(userCreateForm.getPassword2())) {
             bindingResult.rejectValue("password2", "passwordInCorrect",
-                    "2개의 패스워드가 일치하지 않습니다.");
+                    "비밀번호가 일치하지 않습니다.");
             return "signup_form";
         }
 
@@ -61,4 +61,13 @@ public class UserController {
     public String login2() {
         return "login_form2";
     }
+
+    @GetMapping("/info")
+    public String info() {
+        return "index";
+    }
+//    @GetMapping("/files/logo.jpg")
+//    public String img() {
+//        return "kyoz_logo";
+//    }
 }

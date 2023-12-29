@@ -35,6 +35,8 @@ dependencies {
 //	스프링시큐리티
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
+
+//	implementation "org.springframework.security:spring-security-config:5.6.0"
 }
 
 tasks.named('test') {

@@ -19,12 +19,15 @@
         </tr>
         </tbody>
     </table>
-    <span>
+    <div>
         <a  sec:authorize="hasRole('ADMIN')" th:href="@{/archive/create}" class="btn btn-primary">강의 등록</a>
 
-    </span>
-    <span>
+    </div>
+    <br>
+    <div>
           <p sec:authorize="hasRole('ADMIN')">강의 등록 버튼은 관리자에게만 표시됩니다.</p>
-    </span>
+    </div>
+    <p sec:authorize="hasRole('ADMIN')">게시물 수정 및 삭제의 권한은 최고관리자에게 있습니다. </p>
+    <p sec:authorize="hasRole('ADMIN')">Update - 게시물 삭제 기능이 추가되었습니다. </p>
 </div>
 </html>

@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import jakarta.persistence.ManyToOne;
+import com.example.kyoz.user.SiteUser;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -27,6 +30,9 @@ public class Archive {
     private String link;
 
     private LocalDateTime createDate;
+
+    @ManyToOne
+    private SiteUser author;
 
 //    @OneToMany(mappedBy = "archive", cascade = CascadeType.REMOVE)
 //    private List<Answer> answerList;

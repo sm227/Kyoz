@@ -17,6 +17,8 @@ import org.springframework.data.domain.Pageable;
 import java.util.ArrayList;
 import org.springframework.data.domain.Sort;
 
+import com.example.kyoz.user.SiteUser;
+
 @RequiredArgsConstructor
 @Service
 public class ArchiveService {
@@ -36,12 +38,13 @@ public class ArchiveService {
         }
     }
 
-    public void create(String title, String description, String link) {
+    public void create(String title, String description, String link, SiteUser user) {
         Archive q = new Archive();
         q.setTitle(title);
         q.setDescription(description);
         q.setLink(link);
         q.setCreateDate(LocalDateTime.now());
+        q.setAuthor(user);
         this.archiveRepository.save(q);
     }
 
@@ -50,5 +53,9 @@ public class ArchiveService {
         sorts.add(Sort.Order.desc("createDate"));
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
         return this.archiveRepository.findAll(pageable);
+    }
+
+    public void delete(Archive archive) {
+        this.archiveRepository.delete(archive);
     }
 }

@@ -1,21 +1,30 @@
 <nav th:fragment="navbarFragment" class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
-<!--        <a class="navbar-brand" href="/">쿄즈영어</a>-->
-        <a class="navbar-brand" sec:authorize="isAnonymous()" th:href="@{/user/login}">쿄즈영어</a>
-        <a class="navbar-brand" sec:authorize="isAuthenticated()" th:href="@{/question/list}">쿄즈영어</a>
+        <a class="navbar-brand" th:href="@{/user/info}">Kyoz🧑‍🏫</a>
+        <!--        <a class="navbar-brand" sec:authorize="isAnonymous()" th:href="@{/user/login}">쿄즈영어</a>-->
+        <!--        <a class="navbar-brand" sec:authorize="isAuthenticated()" th:href="@{/question/list}">쿄즈영어</a>-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="d-flex">
+                <span class="nav-link disabled mt-1"  sec:authorize="isAuthenticated()" sec:authentication="name"></span>
+                <span class="nav-link disabled mt-1" sec:authorize="isAuthenticated()">&nbsp; 님!!</span>
+                <a class="btn btn-outline-danger btn-sm ms-2 me-3 mt-0" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+                </div>
+            <ul class=" navbar-nav nav-tabs">
                 <li class="nav-item">
                     <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
-                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+<!--                    <a class="btn btn-outline-danger btn-sm ms-2 me-3 mt-1" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>-->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
-<!--                <a class="nav-link" th:href="@{/user/signup}">회원가입</a>-->
+                    <!--                <a class="nav-link" th:href="@{/user/signup}">회원가입</a>-->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/question/list}">Q&A</a>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/archive/list}">이러닝</a>
@@ -23,6 +32,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" sec:authorize="hasRole('ADMIN')" onclick="alert('준비중인 기능입니다!')">출결관리</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" sec:authorize="hasRole('ADMIN')" th:href="@{/h2-console}">Database 관리</a>
                 </li>
             </ul>
         </div>
