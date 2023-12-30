@@ -76,4 +76,6 @@ public class ArchiveController {
         this.archiveService.delete(archive);
         return "redirect:/archive/list";
     }
+
+
 }
