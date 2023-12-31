@@ -13,11 +13,16 @@ import org.springframework.validation.BindingResult;
 
 import lombok.RequiredArgsConstructor;
 
+import java.security.Principal;
+import com.example.kyoz.user.SiteUser;
+import com.example.kyoz.user.UserService;
+
 @RequestMapping("/question")
 @RequiredArgsConstructor
 @Controller
 public class QustionController {
     private final QuestionService questionService;
+    private final UserService userService;
 
 
     @GetMapping("/list")
@@ -42,12 +47,14 @@ public class QustionController {
     }
 
     @PostMapping("/create")
-    public String questionCreate(@Valid QuestionForm questionForm, BindingResult bindingResult) {
+    public String questionCreate(@Valid QuestionForm questionForm, BindingResult bindingResult, Principal principal) {
         if (bindingResult.hasErrors()) {
             return "question_form";
         }
+        SiteUser siteUser = this.userService.getUser(principal.getName());
 
-        this.questionService.create(questionForm.getSubject(), questionForm.getContent());
+        this.questionService
+                .create(questionForm.getSubject(), questionForm.getContent(), siteUser);
         return "redirect:/question/list"; // 질문 저장후 질문목록으로 이동
     }
 }
