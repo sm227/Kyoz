@@ -15,7 +15,7 @@
                 </div>
                 <a href="javascript:void(0);" th:data-uri="@{|/archive/delete/${archive.id}|}"
                    class="delete btn btn-outline-danger btn-sm btn-outline-secondary" sec:authorize="isAuthenticated()"
-                   th:if="${archive.author != null and #authentication.getPrincipal().getUsername() == archive.author.username}"
+
                    th:text="삭제"></a>
             </div>
         </div>
