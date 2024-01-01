@@ -1,6 +1,8 @@
 <nav th:fragment="navbarFragment" class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/user/info}">Kyoz🧑‍🏫</a>
+        <a class="navbar-brand" th:href="@{/user/info}">
+            <img src="/img/logo.jpg" alt="Bootstrap" width="120">
+            </a>
         <!--        <a class="navbar-brand" sec:authorize="isAnonymous()" th:href="@{/user/login}">쿄즈영어</a>-->
         <!--        <a class="navbar-brand" sec:authorize="isAuthenticated()" th:href="@{/question/list}">쿄즈영어</a>-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

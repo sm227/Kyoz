@@ -45,6 +45,7 @@ public class SecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/bootstrap.**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/user/signup")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/user/files")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/img/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/error")).permitAll()
 //                                .antMatchers("/user/login").permitAll()
 //                                .antMatchers("/static/**").permitAll()
