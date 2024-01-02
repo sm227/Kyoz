@@ -1,4 +1,4 @@
-<html layout:decorate="~{layout}">
+<html layout:decorate="~{layout}" xmlns="http://www.w3.org/1999/html">
 <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 <div layout:fragment="content" class="container my-3">
     <form th:action="@{/user/login}" method="post">
@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <h1 class="display-3 text-center m-auto mt-lg-3 mb-4  pt-3">쿄즈 영어 LMS <br>
+        <h1 class="display-5 text-center m-auto mt-lg-3 mb-4  pt-3">쿄즈 영어 <b>LMS</b> <br>
             <p class="fs-6">스마트 학습 관리 시스템</p></h1>
 
 
@@ -55,6 +55,6 @@
     <br>
     <br>
     <br>
-    <p class="text-center"><b>v 0.0.3</b></p>
+    <p class="text-center"><b>v 0.0.4</b></p>
 </div>
 </html>
