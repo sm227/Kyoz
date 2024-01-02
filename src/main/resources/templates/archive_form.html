@@ -5,6 +5,14 @@
 
         <div th:replace="~{form_errors :: formErrorsFragment}"></div>
 
+        <select  name="grade" class="form-select" aria-label="Default select example">
+            <option selected>학년 선택</option>
+            <option name="grade" value="1">초등부</option>
+            <option name="grade" value="2">중등부</option>
+            <option name="grade" value="3">고등부</option>
+
+        </select>
+
         <div class="mb-3">
             <label for="title" class="form-label">제목</label>
             <input type="text" th:field="*{title}"  class="form-control">

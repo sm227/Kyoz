@@ -29,7 +29,12 @@ public class Archive {
     @Column(columnDefinition = "TEXT")
     private String link;
 
+    @Column(columnDefinition = "TEXT")
+    private String grade;
+
     private LocalDateTime createDate;
+
+
 
     @ManyToOne
     private SiteUser author;

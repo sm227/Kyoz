@@ -34,9 +34,10 @@ public class ArchiveController {
     private final UserService userService;
 
     @GetMapping("/list")
-    public String list(Model model,  @RequestParam(value="page", defaultValue="0") int page) {
-        Page<Archive> paging = this.archiveService.getList(page);
+    public String list(Model model,  @RequestParam(value="page", defaultValue="0") int page, @RequestParam(value = "kw", defaultValue = "") String kw) {
+        Page<Archive> paging = this.archiveService.getList(page, kw);
         model.addAttribute("paging", paging);
+        model.addAttribute("kw", kw);
         return "archive_list";
 
     }
@@ -62,7 +63,7 @@ public class ArchiveController {
             return "archive_form";
         }
         SiteUser siteUser = this.userService.getUser(principal.getName());
-        this.archiveService.create(archiveForm.getTitle(), archiveForm.getDescription(), archiveForm.getLink(),siteUser);
+        this.archiveService.create(archiveForm.getTitle(), archiveForm.getDescription(), archiveForm.getLink(),siteUser, archiveForm.getGrade());
         return "redirect:/archive/list"; // 질문 저장후 질문목록으로 이동
     }
 

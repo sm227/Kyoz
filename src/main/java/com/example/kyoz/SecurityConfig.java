@@ -47,6 +47,7 @@ public class SecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/user/files")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/img/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/error")).permitAll()
+//                                .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
 //                                .antMatchers("/user/login").permitAll()
 //                                .antMatchers("/static/**").permitAll()
                                 .anyRequest().authenticated()
