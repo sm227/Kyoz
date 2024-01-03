@@ -11,7 +11,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <div class="d-flex">
-                <span class="nav-link disabled mt-1"  sec:authorize="isAuthenticated()" sec:authentication="name"></span>
+                <span class="nav-link disabled mt-1"  sec:authorize="isAuthenticated()" sec:authentication = "name"></span>
                 <span class="nav-link disabled mt-1" sec:authorize="isAuthenticated()">&nbsp; 님!!</span>
                 <a class="btn btn-outline-danger btn-sm ms-2 me-3 mt-0" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
                 </div>
