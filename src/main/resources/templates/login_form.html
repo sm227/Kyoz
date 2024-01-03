@@ -42,7 +42,8 @@
                                 </div>
 
                                 <div style="width:75%"  class="row  m-auto mt-4">
-                                    <button type="submit" class=" btn btn-primary">로그인</button>
+<!--                                    <button type="submit" id="loginButton" class=" btn btn-primary" onclick="showLoading()">로그인</button>-->
+                                    <button id="loginButton" type="submit" class="btn btn-primary" onclick="showLoading()">로그인</button>
                                 </div>
                                 <br>
                                 <br>
@@ -63,12 +64,21 @@
 </div>
 
 <script>
-    let spinner = document.getElementById('spinner');
+    function showLoading() {
+        var loginButton = document.getElementById("loginButton");
+        loginButton.innerHTML = "로딩 중...";
+        loginButton.disabled = true;
 
-    btnanim = function(){
-    spinner.style.visibility = 'visible';
+        // 여기서 로그인 처리나 다음 단계를 수행할 수 있습니다.
+        // 예를 들어, API 호출 등을 추가할 수 있습니다.
+
+        // 로딩이 완료되면 다시 버튼으로 변경할 수 있습니다.
+        setTimeout(function () {
+            loginButton.innerHTML = "로그인2";
+            loginButton.disabled = false;
+        }, 2000);  // 여기서는 2초 후에 다시 원래 상태로 변경하도록 설정했습니다.
+
 
     }
-
 </script>
 </html>
