@@ -6,28 +6,30 @@ input[type=submit] {
     margin-top:10px;
 }
 
-footer{
-    color: white;
-}
-footer a{
-    color: #bfffff;
-}
-footer a:hover{
-    color: white;
-}
 
-.footer-bottom{
-    background: #3d6277;
-    padding: 0.2em;
+footer{
+    color: gray;
 }
-.footer-top{
-    background: #2d4958;
-}
-.footer-middle{
-    background: #3d6277;
-    padding-top: 0.2em;
-    color: white;
-}
+/*footer a{*/
+/*    color: #bfffff;*/
+/*}*/
+/*footer a:hover{*/
+/*    color: white;*/
+/*}*/
+
+/*.footer-bottom{*/
+/*    !*background: #3d6277;*!*/
+/*    padding: 0.2em;*/
+/*}*/
+/*.footer-top{*/
+/*    background: #2d4958;*/
+/*}*/
+/*.footer-middle{*/
+/*    background: #3d6277;*/
+/*    padding-top: 0.2em;*/
+/*    color: white;*/
+/*}*/
+
 /**Sub Navigation**/
 .subnavigation-container{
     background: #3d6277;

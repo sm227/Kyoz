@@ -16,10 +16,14 @@
 <!-- 기본 템플릿 안에 삽입될 내용 Start -->
 <th:block layout:fragment="content"></th:block>
 
-<th:block layout:fragment="footer"></th:block>
+<!--<th:block th:replace="footer :: footerFragment"></th:block>-->
+<div th:replace="~{footer :: footerFragment}"></div>
+<!--<th:block th:replace="footer :: footerFragment"></th:block>-->
 
 <!--<div id="header-load" th:replace="/footer.html :: footer"></div>-->
+
 <!-- 기본 템플릿 안에 삽입될 내용 End -->
+
 <!-- Bootstrap JS -->
 <script th:src="@{/bootstrap.min.js}"></script>
 <!-- 자바스크립트 Start -->
