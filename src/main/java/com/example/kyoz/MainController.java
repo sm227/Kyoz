@@ -13,7 +13,7 @@ public class MainController {
         return "안녕하세요 sbb에 오신것을 환영합니다.";
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public String root() {
         return "redirect:/user/login";
     }
