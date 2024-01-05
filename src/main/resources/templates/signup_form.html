@@ -5,7 +5,7 @@
             <h4>회원가입</h4>
         </div>
     </div>
-    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+    <form name="signUp" th:action="@{/user/signup}" th:object="${userCreateForm}" method="post" onsubmit="return false">
         <div th:replace="~{form_errors :: formErrorsFragment}"></div>
         <div class="mb-3">
             <label for="realname" class="form-label">이름</label>
@@ -25,6 +25,7 @@
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">이메일</label>
+            <input hidden="hidden" />
             <input type="email" th:field="*{email}" class="form-control">
         </div>
 
@@ -179,15 +180,21 @@
                             (시행일) 이 약관은 2024년 01월부터 시행합니다.</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">동의합니다.</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="form.submit()">동의합니다.</button>
                     </div>
                 </div>
             </div>
         </div>
 
 
-<!--        <button type="submit" class="btn btn-primary">회원가입</button>-->
-<!--        <p>"회원가입" 버튼을 클릭하면 <b>약관에 동의하는 것으로 간주</b>됩니다.</p>-->
+        <!--        <button type="submit" class="btn btn-primary">회원가입</button>-->
+        <!--        <p>"회원가입" 버튼을 클릭하면 <b>약관에 동의하는 것으로 간주</b>됩니다.</p>-->
     </form>
 </div>
+<!--<script>-->
+<!--    document.signUp.addEventListener("keydown", evt => {-->
+<!--        if (evt.code === "Enter")-->
+<!--            evt.preventDefault();-->
+<!--    });-->
+<!--</script>-->
 </html>
