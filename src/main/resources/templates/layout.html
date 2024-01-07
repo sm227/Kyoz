@@ -30,6 +30,18 @@
 <script th:src="@{/bootstrap.min.js}"></script>
 <!-- 자바스크립트 Start -->
 <th:block layout:fragment="script"></th:block>
+
+<script>
+    $(document).ready( function()
+    {
+        $('#spinner').on('click', function()
+        {
+            $('body').addClass('busy');
+        });
+    });
+
+    $("#myModal").modal('show');
+</script>
 <!-- 자바스크립트 End -->
 </body>
 </html>

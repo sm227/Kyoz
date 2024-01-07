@@ -80,3 +80,6 @@ footer{
     font-weight: 400;
     font-style: normal;
 }
+
+#spinner { visibility:hidden; }
+body.busy .spinner { visibility:visible !important; }
