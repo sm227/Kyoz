@@ -24,17 +24,20 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">공지</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <h5 class="modal-title">공지사항</h5>
                         </div>
                         <div class="modal-body">
-                            <p>테스트</p>
+                            <h5>중요 !!</h5>
+                            <p>데이터베이스 관리 시스템의 변경으로 모든 회원정보가 삭제 되었습니다.
+                                <br>다시 회원가입 해주시기 바랍니다.</p>
+
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id = "modal-today-close">today</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+<!--                                                        <button type="button" class="btn btn-primary" id = "modal-today-close" data-bs-dismiss="modal">today</button>-->
+<!--                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+
                         </div>
                     </div>
                 </div>
@@ -66,15 +69,17 @@
                                 </div>
 
                                 <div style="width:75%" class="row  m-auto mt-4">
-                                    <!--                                    <button type="submit" id="loginButton" class=" btn btn-primary" onclick="showLoading()">로그인</button>-->
-                                    <button type="submit" class="btn btn-primary" th:onclick="showLoding()">로그인
-                                        <span id="spinner" class="spinner-border spinner-border-sm"
-                                              aria-hidden="true"></span>
+                                    <button type="submit" id="loginButton" class=" btn btn-primary"
+                                            onclick="showLoading()">로그인
+                                    </button>
+                                    <!--                                    <button type="submit" class="btn btn-primary" onclick="showLoading()">로그인-->
+                                    <span id="spinner" class="spinner-border spinner-border-sm"
+                                          aria-hidden="true"></span>
                                     </button>
 
                                 </div>
                                 <br>
-                                <br>
+
 
                             </div>
                         </div>
@@ -85,29 +90,22 @@
     </form>
 
 
-
     <script>
-        // $("#myModal").modal();
+        // $("#myModal").modal({show:true});
 
-        $(window).on('load', function() {
+        $(window).on('load', function () {
             $('#myModal').modal('show');
         });
 
     </script>
 
 
-<!--    <script>-->
-<!--        var myModal = new bootstrap.Modal(document.getElementById("exampleModal"));-->
-<!--        myModal.show();-->
-<!--    </script>-->
-
-
     <br>
     <br>
     <br>
     <br>
     <br>
-    <p class="text-center"><b>v 0.0.4</b></p>
+    <p class="text-center"><b>v 0.1.1</b></p>
 </div>
 
 <script>
@@ -120,7 +118,7 @@
 </script>
 
 
-<script>
+<script type="text/javascript">
     function showLoading() {
         var loginButton = document.getElementById("loginButton");
         loginButton.innerHTML = "로딩 중...";
@@ -137,5 +135,48 @@
 
 
     }
+
+    function setCookie(name, value, expiredays) {
+        var today = new Date();
+        today.setDate(today.getDate() + expiredays);
+        document.cookie = name + '=' + escape(value) + '; expires=' + today.toGMTString();
+    }
+
+    function getCookie(name) {
+        var cookie = document.cookie;
+        if (document.cookie != "") {
+            var cookie_array = cookie.split("; ");
+            for (var index in cookie_array) {
+                var cookie_name = cookie_array[index].split("=");
+                if (cookie_name[0] == "mycookie") {
+                    return cookie_name[1];
+                }
+            }
+        }
+        return;
+    }
+
+    $("#modal-today-close").click(function () {
+        $("#myModal").modal("hide");
+        setCookie("mycookie", 'popupEnd', 1);
+    })
+
+    var checkCookie = getCookie("mycookie");
+
+    if (checkCookie == 'popupEnd') {
+        $("#myModal").modal("hide");
+    } else {
+        $('#myModal').modal("show");
+    }
+
+
+
+    $(function () {
+        console.log($.cookie('pop'));
+        if (!$.cookie('pop')) {
+            $('#myModal').modal('show');
+            $.cookie('pop', '1');
+        }
+    })
 </script>
 </html>
