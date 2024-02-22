@@ -1,7 +1,6 @@
 package com.example.kyoz.answer;
 
 import jakarta.validation.constraints.NotEmpty;
-
 import lombok.Getter;
 import lombok.Setter;
 

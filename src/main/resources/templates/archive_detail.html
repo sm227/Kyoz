@@ -1,3 +1,4 @@
+
 <html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container my-3">
     <!-- 질문 -->
@@ -18,6 +19,10 @@
 
                    th:text="삭제"></a>
             </div>
+            <section class="justify-content-center text-center">
+                <div class="m-auto" th:utext="${archive.link}"></div>
+            </section>
+
         </div>
     </div>
 

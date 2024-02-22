@@ -1,11 +1,9 @@
 package com.example.kyoz.answer;
 
 import com.example.kyoz.question.Question;
+import com.example.kyoz.user.SiteUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import com.example.kyoz.user.SiteUser;
-
 
 import java.time.LocalDateTime;
 

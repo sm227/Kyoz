@@ -1,15 +1,14 @@
 package com.example.kyoz.archive;
 
 //import com.example.kyoz.answer.Answer;
+
+import com.example.kyoz.user.SiteUser;
 import jakarta.persistence.*;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
-import jakarta.persistence.ManyToOne;
-import com.example.kyoz.user.SiteUser;
-
 import java.time.LocalDateTime;
-import java.util.List;
 
 
 @Getter

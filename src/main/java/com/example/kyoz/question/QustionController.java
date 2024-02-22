@@ -1,21 +1,20 @@
 package com.example.kyoz.question;
 
-import java.util.List;
-
 import com.example.kyoz.answer.AnswerForm;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.Model;
-
-import jakarta.validation.Valid;
-import org.springframework.validation.BindingResult;
-
-import lombok.RequiredArgsConstructor;
-
-import java.security.Principal;
 import com.example.kyoz.user.SiteUser;
 import com.example.kyoz.user.UserService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.security.Principal;
+import java.util.List;
 
 @RequestMapping("/question")
 @RequiredArgsConstructor
